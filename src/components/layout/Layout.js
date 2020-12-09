@@ -6,7 +6,6 @@ import Container from "react-bootstrap/Container";
 import Home from "../home/Home";
 import About from "../about/About";
 import Contact from "../contact/Contact";
-import SliderContainer from "../slider/SliderContainer";
 import CharacterDetail from "../characters/CharacterDetail";
 
 function Layout() {
@@ -14,7 +13,7 @@ function Layout() {
 		<Router>
 			<Navbar bg="dark" variant="dark" expand="lg">
 				<NavLink to="/" exact>
-					<Navbar.Brand>Rick and Morty</Navbar.Brand>
+					<Navbar.Brand>RAWG Video Games</Navbar.Brand>
 				</NavLink>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
@@ -28,19 +27,15 @@ function Layout() {
 						<NavLink to="/contact" className="nav-link">
 							Contact
 						</NavLink>
-						<NavLink to="/slider" className="nav-link">
-							Slider
-						</NavLink>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
 			<Container>
 				<Switch>
-					<Route path="/" exact component={Home} />
+					<Route path={["/", "/home"]} exact component={Home} />
 					<Route path="/about" component={About} />
 					<Route path="/contact" component={Contact} />
-					<Route path="/slider" component={SliderContainer} />
-					<Route path="/character/:id" component={CharacterDetail} />
+					<Route path="/game/:id" component={CharacterDetail} />
 				</Switch>
 			</Container>
 		</Router>
