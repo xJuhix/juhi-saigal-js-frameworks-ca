@@ -1,5 +1,5 @@
-@import "partials/_variables";
-@import "partials/_game";
+@import "partials/__variables";
+@import "partials/__game";
 
 .container {
 	padding-top: 30px;
@@ -11,6 +11,10 @@
 	padding: 30px;
 	background: #ebebeb;
 	margin: 0 auto;
+}
+
+.search.input-group {
+    border: solid lightgray 0.5px;
 }
 
 .error {

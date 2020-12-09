@@ -58,7 +58,7 @@ function ContactForm() {
 
             <Form.Group>
                 <Form.Label>Message:</Form.Label>
-                <Form.Control type="text" placeholder="Enter your Message" ref={register} />
+                <Form.Control type="text" placeholder="Enter your Message" as="textarea" ref={register} />
                 {errors.message && <ErrorMessage>{errors.message.message}</ErrorMessage>}
             </Form.Group>
             

@@ -31,10 +31,13 @@ function GameInfo() {
 			<Col>
 				<h1>{game.name}</h1>
 				<p>
-					<b>Description:</b> {game.description_raw}
+					<b>Description:</b>  
+				</p>
+				<p class="gameDescription">
+					{game.description_raw}
 				</p>
                 <p>
-                   <b>Visit the game page:</b> <a target='_blank' href={game.website}>Visit Game</a>
+                   <b>Visit the game page:</b> <a  href={game.website}>Visit Game</a>
                 </p>
 				
 				
