@@ -5,13 +5,12 @@ import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { BASE_URL } from "../../constants/api";
 
-function GameDetail() {
-	const [gameDetail, setGame] = useState(null);
-	
+function GameInfo() {
+	const [game, setGame] = useState([]);    
 
-	let { id } = useParams();
+    let { id } = useParams();
 
-	const url = BASE_URL + id;
+	const url = BASE_URL + "/" + id;
 
 	useEffect(() => {
 		fetch(url)
@@ -26,22 +25,16 @@ function GameDetail() {
 
 	return (
 		<Row>
-			<Col md={6} className="GameDetail-image">
-				<Image src={gameDetail.background_image} rounded />
+			<Col md={6} className="gameDetail-image">
+				<Image src={game.background_image} width="500" rounded />
 			</Col>
 			<Col>
-				<h1>{gameDetail.name}</h1>
+				<h1>{game.name}</h1>
 				<p>
-					<b>Rating:</b> {gameDetail.rating}
-				</p>
-				<p>
-					<b>Release date:</b> {gameDetail.released}
-				</p>
-				<p>
-					<b>Description:</b> {gameDetail.description_raw}
+					<b>Description:</b> {game.description_raw}
 				</p>
                 <p>
-                   <b>Visit the game page:</b> <a target='_blank' href={gameDetail.website}>Visit Game</a>
+                   <b>Visit the game page:</b> <a target='_blank' href={game.website}>Visit Game</a>
                 </p>
 				
 				
@@ -50,4 +43,4 @@ function GameDetail() {
 	);
 }
 
-export default GameDetail;
+export default GameInfo;
