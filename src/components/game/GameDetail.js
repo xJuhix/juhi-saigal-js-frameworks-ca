@@ -33,7 +33,7 @@ function GameInfo() {
 				<p>
 					<b>Description:</b>  
 				</p>
-				<p class="gameDescription">
+				<p>
 					{game.description_raw}
 				</p>
                 <p>

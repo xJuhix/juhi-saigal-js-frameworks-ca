@@ -36,7 +36,7 @@ function Home() {
             <Row>
                 {filtredGames.map(game => (
                     <Col sm={6} md={3}>
-                        <GameItem key={game.id} id={game.id} name={game.name} background_image={game.background_image} rating={game.rating} released={game.released} />
+                        <GameItem key={game.uniqueId} id={game.id} name={game.name} background_image={game.background_image} rating={game.rating} released={game.released} />
                     </Col>
                 ))}
             </Row>
