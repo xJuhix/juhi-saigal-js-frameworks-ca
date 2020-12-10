@@ -1,12 +1,14 @@
-import React from 'react'
-import { useForm } from "react-hook-form"
-import * as yup from "yup";
+import React from 'react';
+import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ErrorMessage from "./ErrorMessage";
 
+
 const schema = yup.object().shape({
+    
     firstName: yup
         .string()
         .required("First name is required")
@@ -22,7 +24,7 @@ const schema = yup.object().shape({
         .email('Invalid email')
         .required("A valid Email is required"),
 
-    message: yup
+    messageField: yup
         .string()
         .required("Message is required")
         .min(10, "Your message must contain at least 10 characters")
@@ -38,7 +40,7 @@ function ContactForm() {
     }
 
     return (
-        <Form noValidate onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group>
                 <Form.Label>First name:</Form.Label>
                 <Form.Control type="text" name="firstName" placeholder="Enter your first name" ref={register} />
@@ -46,20 +48,20 @@ function ContactForm() {
 
                 <br />
                 <Form.Label>Last name:</Form.Label>
-                <Form.Control type="text" placeholder="Enter your Last name" ref={register} />
+                <Form.Control type="text" name="lastName" placeholder="Enter your Last name" ref={register} />
                 {errors.lastName && <ErrorMessage>{errors.lastName.message}</ErrorMessage>}
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>Email:</Form.Label>    
-                <Form.Control type="text" placeholder="Enter your Email" ref={register} />
+                <Form.Control type="text" name="email" placeholder="Enter your Email" ref={register} />
                 {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>Message:</Form.Label>
-                <Form.Control as="textarea" type="text" placeholder="Enter your Message" ref={register} />
-                {errors.message && <ErrorMessage>{errors.message.message}</ErrorMessage>}
+                <Form.Control as="textarea" name="messageField" type="text" placeholder="Enter your Message" ref={register} />
+                {errors.messageField && <ErrorMessage>{errors.messageField.message}</ErrorMessage>}
             </Form.Group>
             
             <Button type="submit" variant="primary">Submit</Button>     
