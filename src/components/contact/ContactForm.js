@@ -35,12 +35,15 @@ function ContactForm() {
         resolver: yupResolver(schema),
     });
 
-    function onSubmit(data) {
-        console.log("data", data);
+    const [sent, setSent] = React.useState(false);
+
+    function onSubmit() {
+        setSent(true);
     }
 
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
+            {sent && <h3>Thank you for contacting us. Your message has been sent.</h3>}
             <Form.Group>
                 <Form.Label>First name:</Form.Label>
                 <Form.Control type="text" name="firstName" placeholder="Enter your first name" ref={register} />
@@ -63,7 +66,7 @@ function ContactForm() {
                 <Form.Control as="textarea" name="messageField" type="text" placeholder="Enter your Message" ref={register} />
                 {errors.messageField && <ErrorMessage>{errors.messageField.message}</ErrorMessage>}
             </Form.Group>
-            
+
             <Button type="submit" variant="primary">Submit</Button>     
         </Form>
         
