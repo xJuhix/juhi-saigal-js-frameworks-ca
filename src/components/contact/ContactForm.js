@@ -37,7 +37,8 @@ function ContactForm() {
 
     const [sent, setSent] = React.useState(false);
 
-    function onSubmit() {
+    function onSubmit(data) {
+        console.log("data", data);
         setSent(true);
     }
 
