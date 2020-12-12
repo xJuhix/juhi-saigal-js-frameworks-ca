@@ -44,7 +44,7 @@ function ContactForm() {
 
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
-            {sent && <h3>Thank you for contacting us. Your message has been sent.</h3>}
+            {sent && <div className="validationMessage"> <h3>Thank you!</h3> <p>Your message has been successfully sent. We will contact you very soon!</p></div> }
             <Form.Group>
                 <Form.Label>First name:</Form.Label>
                 <Form.Control type="text" name="firstName" placeholder="Enter your first name" ref={register} />
