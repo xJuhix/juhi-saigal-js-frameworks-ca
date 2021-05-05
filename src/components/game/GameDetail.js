@@ -26,26 +26,24 @@ function GameInfo() {
 
 	return (
 		<>
-			<Heading title="About Game" />
-				<Row>
-					<Col md={6} className="gameDetail-image">
-						<Image src={game.background_image} width="500" rounded />
-					</Col>
-					<Col>
-						<h2>{game.name}</h2>
-						<p>
-							<b>Description:</b>  
-						</p>
-						<p>
-							{game.description_raw}
-						</p>
-						<p>
-						<b>Visit the game page:</b> <a  href={game.website}>Visit Game</a>
-						</p>
-						
-						
-					</Col>
-				</Row>
+		<Heading title="About Game" />
+			<Row>
+				<Col md={6} className="gameDetail-image">
+					<Image src={game.background_image} width="500" rounded />
+				</Col>
+				<Col>
+					<h2>{game.name}</h2>
+					<p>
+						<b>Description:</b>  
+					</p>
+					<p>
+						{game.description_raw}
+					</p>
+					<p>
+					<b>Visit the game page:</b> <a  href={game.website}>Visit Game</a>
+					</p>
+				</Col>
+			</Row>
 		</>
 	);
 }
