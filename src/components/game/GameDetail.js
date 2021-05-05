@@ -9,7 +9,7 @@ import { BASE_URL } from "../../constants/api";
 function GameInfo() {
 	const [game, setGame] = useState([]);    
 
-    	let { id } = useParams();
+    	let {id} = useParams();
 
 	const url = BASE_URL + "/" + id;
 
