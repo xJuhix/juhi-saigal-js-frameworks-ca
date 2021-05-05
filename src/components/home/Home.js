@@ -5,7 +5,7 @@ import GameList from "../game/GameList";
 export function Home() {
 	return (
 		<>
-			<Heading title="RAWG Viedo Games" />
+			<Heading title="RAWG Video Games" />
 			<GameList />
 		</>
 	);
