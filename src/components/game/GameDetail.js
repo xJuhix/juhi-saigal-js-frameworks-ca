@@ -11,7 +11,7 @@ function GameInfo() {
 
     	let {id} = useParams();
 
-	const url = BASE_URL + "/" + id;
+	const url = BASE_URL + "&" + id;
 
 	useEffect(() => {
 		fetch(url)
