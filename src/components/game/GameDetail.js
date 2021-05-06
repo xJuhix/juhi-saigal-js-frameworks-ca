@@ -5,13 +5,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { BASE_URL } from "../../constants/api";
+import { KEY } from "../../constants/api";
 
 function GameInfo() {
 	const [game, setGame] = useState([]);    
 
     	let {id} = useParams();
 
-	const url = BASE_URL + "/" + id;
+	const url = BASE_URL + "/" + id + KEY;
 
 	useEffect(() => {
 		fetch(url)
