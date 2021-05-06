@@ -11,8 +11,10 @@ function Home() {
     const [filtredGames, setFilteredGames] = useState([]);
 
     // Getting the games from API
-    useEffect(() => {
-        fetch(BASE_URL)
+    const url = BASE_URL + KEY;
+
+	useEffect(() => {
+		fetch(url)
             .then(response => response.json())
             .then(json => {
                 setGames(json.results)
