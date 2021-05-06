@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BASE_URL } from "../../constants/api";
-import { KEY } from "../../constants/api";
+import { BASE_URL,KEY } from "../../constants/api";
 import GameSearch from "./GameSearch";
 import GameItem from "./GameItem";
 import Row from "react-bootstrap/Row";
